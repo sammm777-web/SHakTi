@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz & Survey | SHakti</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .quiz-hero {
+            background: linear-gradient(120deg, #f4edf9, #fff5f7);
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .quiz-hero h1 {
+            font-size: 40px;
+            margin: 12px 0;
+        }
+
+        .quiz-hero h1 span { color: #6848a6; }
+
+        .quiz-container {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .quiz-card, .survey-card {
+            padding: 28px;
+            margin-bottom: 30px;
+            border: 1px solid #eee5f5;
+            border-radius: 13px;
+            background: white;
+            box-shadow: 0 5px 20px #00000008;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .question h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .question label {
+            display: block;
+            margin: 10px 0;
+            color: #706a79;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .question input {
+            accent-color: #6848a6;
+            margin-right: 8px;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            padding: 13px 22px;
+            background: #6848a6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #quizResult {
+            margin-top: 20px;
+            padding: 18px;
+            background: #f4edf9;
+            color: #6848a6;
+            border-radius: 9px;
+            display: none;
+            font-weight: bold;
+        }
+
+        .survey-card input,
+        .survey-card select,
+        .survey-card textarea {
+            display: block;
+            width: 100%;
+            margin: 10px 0 18px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        .survey-card textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .survey-card label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #surveyResult {
+            margin-top: 15px;
+            color: #6848a6;
+            font-weight: bold;
+        }
+
+        @media(max-width:520px) {
+            .quiz-hero h1 { font-size: 30px; }
+            .quiz-card, .survey-card { padding: 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">S</span>
+        <div>
+            <h2>SHakti</h2>
+            <small>SAFETY • RIGHTS • EMPOWERMENT</small>
+        </div>
+    </div>
+
+    
+<nav id="navigation">
+
+    <a href="index.html"
+       data-en="Home"
+       data-ta="முகப்பு">Home</a>
+
+    <a href="rights.html"
+       data-en="Know Your Rights"
+       data-ta="உங்கள் உரிமைகளை அறியுங்கள்">Know Your Rights</a>
+
+    <a href="emergency.html"
+       data-en="Emergency Help"
+       data-ta="அவசர உதவி">Emergency Help</a>
+
+    <a href="cyber-safety.html"
+       data-en="Cyber Safety"
+       data-ta="இணைய பாதுகாப்பு">Cyber Safety</a>
+
+    <a href="legal-support.html"
+       data-en="Legal Support"
+       data-ta="சட்ட உதவி">Legal Support</a>
+
+    <a href="workplace.html"
+       data-en="Workplace Safety"
+       data-ta="பணியிட பாதுகாப்பு">Workplace Safety</a>
+
+    <a href="quiz.html"
+       data-en="Quiz & Survey"
+       data-ta="வினாடி வினா மற்றும் கருத்துக்கணிப்பு">Quiz & Survey</a>
+
+</nav>
+
+
+    <button id="languageToggle" class="language-button">தமிழ்</button>
+    <button class="menu-button" id="menuToggle">☰</button>
+
+</header>
+
+
+<section class="quiz-hero">
+
+    <span class="tagline">LEARN • TEST • EMPOWER</span>
+
+    <h1>Awareness <span>Quiz & Survey</span></h1>
+
+    <p>
+        Test your knowledge of women's constitutional rights
+        and help us understand awareness levels.
+    </p>
+
+</section>
+
+
+<section class="quiz-container">
+
+    <div class="quiz-card">
+
+        <h2>Constitutional Rights Quiz</h2>
+
+        <p>Answer all five questions and check your score.</p>
+
+        <form id="quizForm">
+
+            <div class="question">
+
+                <h3>1. Which Article guarantees equality before the law?</h3>
+
+                <label><input type="radio" name="q1" value="a"> Article 14</label>
+                <label><input type="radio" name="q1" value="b"> Article 19</label>
+                <label><input type="radio" name="q1" value="c"> Article 32</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>2. Which Article prohibits discrimination on grounds including sex?</h3>
+
+                <label><input type="radio" name="q2" value="a"> Article 21</label>
+                <label><input type="radio" name="q2" value="b"> Article 15</label>
+                <label><input type="radio" name="q2" value="c"> Article 25</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>3. Which Article protects life and personal liberty?</h3>
+
+                <label><input type="radio" name="q3" value="a"> Article 14</label>
+                <label><input type="radio" name="q3" value="b"> Article 16</label>
+                <label><input type="radio" name="q3" value="c"> Article 21</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>4. What is India's integrated emergency response number?</h3>
+
+                <label><input type="radio" name="q4" value="a"> 112</label>
+                <label><input type="radio" name="q4" value="b"> 155</label>
+                <label><input type="radio" name="q4" value="c"> 199</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <h3>5. Which Act addresses sexual harassment of women at the workplace?</h3>
+
+                <label><input type="radio" name="q5" value="a"> Dowry Prohibition Act</label>
+                <label><input type="radio" name="q5" value="b"> POSH Act, 2013</label>
+                <label><input type="radio" name="q5" value="c"> Consumer Protection Act</label>
+
+            </div>
+
+
+            <button type="submit" class="submit-button">
+                Submit Quiz
+            </button>
+
+        </form>
+
+
+        <div id="quizResult" aria-live="polite"></div>
+
+    </div>
+
+
+    <!-- SURVEY -->
+
+    <div class="survey-card">
+
+        <h2>Women's Safety Awareness Survey</h2>
+
+        <p>
+            Share your feedback to help improve
+            awareness about women's rights.
+        </p>
+
+        <form id="surveyForm">
+
+            <label for="awareness">
+                1. Are you aware of women's constitutional rights?
+            </label>
+
+            <select id="awareness" required>
+                <option value="">Select an answer</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Somewhat</option>
+            </select>
+
+
+            <label for="knowledge">
+                2. How would you rate your legal awareness?
+            </label>
+
+            <select id="knowledge" required>
+                <option value="">Select a rating</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Needs Improvement</option>
+            </select>
+
+
+            <label for="safety">
+                3. Do you know the emergency number 112?
+            </label>
+
+            <select id="safety" required>
+                <option value="">Select an answer</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+
+
+            <label for="suggestion">
+                4. Your suggestions for improving women's safety awareness
+            </label>
+
+            <textarea id="suggestion"
+                placeholder="Write your suggestions..."
+                maxlength="1000"></textarea>
+
+
+            <button type="submit" class="submit-button">
+                Submit Survey
+            </button>
+
+        </form>
+
+        <div id="surveyResult" aria-live="polite"></div>
+
+    </div>
+
+
+<!-- CONTACT & FEEDBACK -->
+
+<div class="survey-card">
+
+    <h2>Contact & Feedback</h2>
+
+    <p>Share your thoughts or questions with the SHakti team.</p>
+
+    <form id="feedbackForm">
+
+        <label for="feedbackName">Your Name</label>
+        <input type="text" id="feedbackName"
+               placeholder="Enter your name" required>
+
+        <label for="feedbackEmail">Email Address</label>
+        <input type="email" id="feedbackEmail"
+               placeholder="Enter your email" required>
+
+        <label for="feedbackMessage">Your Message</label>
+        <textarea id="feedbackMessage"
+                  placeholder="Write your message..."
+                  maxlength="1000" required></textarea>
+
+        <button type="submit" class="submit-button">
+            Submit Feedback
+        </button>
+
+    </form>
+
+    <div id="feedbackResult" aria-live="polite"></div>
+
+</div>
+
+
+</section>
+
+
+<footer>
+    <h2>SHakti</h2>
+    <p>Know Your Rights. Stay Aware. Stay Empowered.</p>
+    <small>Educational awareness project.</small>
+</footer>
+
+
+<script src="js/app.js"></script>
+<script src="js/quiz.js"></script>
+
+</body>
+</html>

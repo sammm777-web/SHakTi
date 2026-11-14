@@ -1,0 +1,622 @@
+
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: #6848a6;
+    --dark: #211b2d;
+    --light: #f8f5fb;
+    --text: #706a79;
+}
+
+body {
+    font-family: "DM Sans", "Noto Sans Tamil", sans-serif;
+    color: var(--dark);
+    background: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    height: 82px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--purple);
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 22px;
+}
+
+.logo small {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 18px;
+}
+
+.navbar nav a {
+    font-size: 12px;
+    font-weight: 600;
+    color: #625c69;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--purple);
+}
+
+.language-button {
+    border: 1px solid #ddd1eb;
+    padding: 9px 14px;
+    border-radius: 25px;
+    background: white;
+    color: var(--purple);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 560px;
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+        110deg,
+        #fff,
+        #f4edf9
+    );
+}
+
+.tagline {
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: Manrope, sans-serif;
+    font-size: 55px;
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero-content p {
+    color: var(--text);
+    max-width: 550px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.primary-button {
+    background: var(--purple);
+    color: white;
+}
+
+.secondary-button {
+    border: 1px solid #d7cce2;
+    color: var(--purple);
+    background: white;
+}
+
+.hero-note {
+    margin-top: 25px;
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+    height: 370px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.visual-circle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: linear-gradient(
+        140deg,
+        #e6d8f4,
+        #f7e7ee
+    );
+    display: grid;
+    place-items: center;
+    box-shadow: 0 20px 55px #6848a622;
+}
+
+.visual-circle span {
+    font-size: 120px;
+    color: var(--purple);
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 13px 17px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #00000012;
+    font-size: 12px;
+}
+
+.floating-card strong {
+    display: block;
+    color: var(--purple);
+    font-size: 16px;
+}
+
+.floating-card small {
+    color: var(--text);
+}
+
+.card-one {
+    top: 30px;
+    left: 5%;
+}
+
+.card-two {
+    bottom: 40px;
+    left: 0;
+}
+
+.card-three {
+    right: 0;
+    bottom: 20px;
+    font-weight: bold;
+}
+
+
+/* INTRODUCTION */
+
+.introduction {
+    padding: 75px 10%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-heading > span {
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-family: Manrope, sans-serif;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.section-heading h2 span {
+    color: var(--purple);
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+/* FEATURE CARDS */
+
+.features {
+    padding: 50px 9% 90px;
+    background: var(--light);
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 27px;
+    border: 1px solid #eee8f2;
+    border-radius: 13px;
+    transition: 0.25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px #00000010;
+}
+
+.feature-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: #f1eafa;
+    color: var(--purple);
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.feature-card h3 {
+    margin: 18px 0 8px;
+    font-size: 18px;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 65px;
+}
+
+.feature-card > span:last-child {
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* EMERGENCY SECTION */
+
+.emergency-section {
+    margin: 65px 9%;
+    padding: 35px;
+    border-radius: 15px;
+    background: #f8e9ed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.emergency-section span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9b3557;
+    font-weight: bold;
+}
+
+.emergency-section h2 {
+    margin: 8px 0;
+    font-size: 27px;
+}
+
+.emergency-section p {
+    font-size: 12px;
+    color: #765f68;
+}
+
+.emergency-button {
+    background: var(--dark);
+    color: white;
+    padding: 13px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 45px 9%;
+    text-align: center;
+}
+
+footer p {
+    color: #c5bacd;
+    font-size: 12px;
+    margin: 8px 0 20px;
+}
+
+footer small {
+    color: #a89eaf;
+    font-size: 10px;
+}
+
+
+/* TAMIL FONT */
+
+body.tamil {
+    font-family: "Noto Sans Tamil", sans-serif;
+}
+
+body.tamil h1,
+body.tamil h2,
+body.tamil h3 {
+    line-height: 1.5;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 1050px) {
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+    }
+
+}
+
+@media(max-width: 800px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        box-shadow: 0 10px 25px #00000012;
+    }
+
+    .navbar nav.open {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .emergency-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media(max-width: 520px) {
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        transform: scale(.8);
+        margin: -20px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .emergency-section {
+        margin: 35px 6%;
+        padding: 25px;
+    }
+
+}
+
+
+/* =====================================
+   SHAKTI - PART 3 RESPONSIVE DESIGN
+===================================== */
+
+/* Language button */
+
+.language-button {
+    cursor: pointer;
+    border: 1px solid #6848a6;
+    color: #6848a6;
+    background: white;
+    border-radius: 7px;
+    padding: 9px 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.language-button:hover {
+    background: #6848a6;
+    color: white;
+}
+
+/* Mobile menu button */
+
+.menu-button {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: #6848a6;
+    color: white;
+    border-radius: 6px;
+    padding: 9px 13px;
+    font-size: 19px;
+}
+
+/* Navigation links */
+
+#navigation a {
+    transition: color 0.3s ease;
+}
+
+#navigation a:hover {
+    color: #6848a6;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    #navigation {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    #navigation.show-menu {
+        display: flex;
+    }
+
+    #navigation a {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+}
+
+/* Smooth page appearance */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Interactive card hover */
+
+.right-card,
+.cyber-card,
+.legal-card,
+.work-card,
+.helpline-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.right-card:hover,
+.cyber-card:hover,
+.legal-card:hover,
+.work-card:hover,
+.helpline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #6848a620;
+}
+
+/* Focus accessibility */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #b99ce8;
+    outline-offset: 3px;
+}
+
+/* Smaller screens */
+
+@media (max-width: 520px) {
+
+    .language-button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .menu-button {
+        padding: 8px 11px;
+    }
+
+}
