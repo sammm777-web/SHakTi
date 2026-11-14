@@ -14,8 +14,7 @@ app.use(express.json());
 // Serve SHakti frontend files safely
 const frontendFolder = path.join(__dirname, "..");
 
-app.use("/css", express.static(path.join(frontendFolder, "css")));
-app.use("/js", express.static(path.join(frontendFolder, "js")));
+app.use(express.static(frontendFolder));
 
 // Local storage (no database installation required)
 const dataFolder = path.join(__dirname, "data");
