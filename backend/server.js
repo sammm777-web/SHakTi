@@ -5,11 +5,17 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve SHakti frontend files safely
+const frontendFolder = path.join(__dirname, "..");
+
+app.use("/css", express.static(path.join(frontendFolder, "css")));
+app.use("/js", express.static(path.join(frontendFolder, "js")));
 
 // Local storage (no database installation required)
 const dataFolder = path.join(__dirname, "data");
@@ -36,9 +42,20 @@ function saveData(filename, data) {
     fs.writeFileSync(filePath, JSON.stringify(records, null, 2));
 }
 
-// Home route
-app.get("/", (req, res) => {
-    res.send("Welcome to SHakti Backend!");
+// Serve website pages
+const pages = {
+    "/": "index.html",
+    "/index.html": "index.html",
+    "/quiz.html": "quiz.html",
+    "/rights.html": "rights.html",
+    "/emergency.html": "emergency.html",
+    "/legal-support.html": "legal-support.html",
+    "/cyber-safety.html": "cyber-safety.html",
+    "/workplace.html": "workplace.html"
+};
+
+app.get(Object.keys(pages), (req, res) => {
+    res.sendFile(path.join(frontendFolder, pages[req.path]));
 });
 
 // Health API
